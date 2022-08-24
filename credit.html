@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예매</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+    </style>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+
+
+    <script type="text/javascript">
+        const timeMap = new Map([
+            ["goschool",new Map([
+                ["goschool0","도착지가 선택되지 않았습니다."],
+                 ["goschool1","13:30 출발,14:30 출발, 15:30 출발, 16:30 출발, 18:30 출발, (금) 15:30 출발, (금) 18:10 출발"],
+                 ["goschool2","18:10 출발, (금) 18:10 출발"],
+                 ["goschool3","16:30 출발, 18:10 출발, (금) 18:10 출발"],
+                 ["goschool4","18:10 출발, (금) 18:10 출발"],
+                 ["goschool5","16:30 출발"],
+                 ["goschool6","16:30 출발"]
+            ])
+            ],
+            ["go0", "06:50 출발"],
+            ["go1", "07:30 출발"],
+            ["go2", "07:00 출발"],
+            ["go3", "07:30 출발"],
+            ["go4", "07:50 출발"],
+            ["go5", "06:30 출발"],
+            ["go6", "07:00 출발"],
+            ["go7", "07:00 출발"],
+            ["go8", "07:00 출발"],
+            ["go9", "07:10 출발"],
+            ["go10", "법원사거리 07:30 출발,영통입구 07:40 출발,수원TG 07:45 출발"],
+            ["go11", "동탄이마트 07:5 출발"]
+        ])
+
+
+        $(function () {
+
+            //출발 선택
+            $('#select1').change(function () {
+                var goschool = ["도착지를 선택해주세요","신갈IC -> 죽전정류장 -> 양재 -> 강남", "신갈IC -> 죽전정류장 -> 송내", "신갈IC -> 죽전정류장 -> 분당", "안산 중앙역", "영통입구 -> 법원사거리 -> 범계", "송내"];
+                
+                //value값 확인
+                console.log(this.value);
+
+                var go = ["학교"];
+
+                var changeItem;
+                var timeArr;
+                
+                $('#select3').empty();
+                //출발이 학교인 경우
+                if (this.value == "goschool") {
+                    changeItem = goschool;
+                } else if (this.value == "") {
+                    changeItem = "";
+                } else {
+                    timeArr = timeMap.get(this.value).split(",");
+                    //도착지가 학교인 경우 
+                    changeItem = go;
+
+                    timeArr.forEach(function(item){
+                    var option = $("<option>" + item + "</option>")
+                    $("#select3").append(option);
+                    })
+                }
+
+                $('#select2').empty();
+
+                for (var count = 0; count < changeItem.length; count++) {
+                    var option = $("<option value='"+this.value+count+"'>" + changeItem[count] + "</option>");
+                    $('#select2').append(option);
+                }               
+
+            });
+
+            //도착 선택 (학교 출발)
+            $("#select2").change(function () {
+                console.log(timeMap.get("goschool"))
+                var timeArr = timeMap.get("goschool").get(this.value).split(",");
+                $('#select3').empty();
+                
+                timeArr.forEach(function(item){
+                    var option = $("<option>" + item + "" + "</option>")
+                    $("#select3").append(option);
+                })
+
+            })
+
+        });
+        function goMain() {
+            alert("QR코드 생성 및, 결제가 완료되었습니다.")
+            // 운전자 화면에서 만석 클릭시 만석이라 결제가 안된다는 기능 추가 예정
+            window.location.href = "main.html";
+        }
+
+    </script>
+
+
+
+
+</head>
+
+<body id="index">
+    <div id="jb-container">
+        <div id="jb-header">
+            <h1 style="text-align: center;">결제 및 QR생성</h1>
+            <p style="text-align: right;">20202020님</p>
+            <img src="images/bu.jpg" style="display: block; margin: 0 auto; width: 100px; height: 100px;">
+        </div>
+        <div id="jb-content">
+            <!-- 출발 -->
+            <h2>출발</h2>
+            <!-- 셀렉트 박스 -->
+            <select id="select1">
+                <!-- <option>출발지를 선택해주세요.</option> -->
+                <option value="">출발지 선택</option>
+                <option value="goschool">학교</option>
+                <option value="go0">영등포</option>
+                <option value="go1">교대</option>
+                <option value="go2">잠실</option>
+                <option value="go3">분당</option>
+                <option value="go4">죽전</option>
+                <option value="go5">인천 문학경기장</option>
+                <option value="go6">송내</option>
+                <option value="go7">안산 중앙역</option>
+                <option value="go8">안산 상록수역</option>
+                <option value="go9">범계</option>
+                <option value="go10">수원</option>
+                <option value="go11">동탄</option>
+            </select>
+
+            <!-- 도착 -->
+            <h2>도착</h2>
+            <!-- 셀렉트 박스 -->
+            <select id="select2">
+                <option selected>도착지를 선택해주세요.</option>
+            </select>
+            <br>
+            <h2>시간</h2>
+            <!-- 셀렉트 박스 -->
+            <select id="select3">
+                <option selected>탑승 시간을 선택해주세요.</option>
+            </select>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- 결제 방식-->
+            <h2>결제 방식 선택</h2>
+            <!-- 셀렉트 박스-->
+            <div>
+                <select name="credit_what">
+                    <option value="card" selected>카드</option>
+                    <option value="deposit">무통장 입금</option>
+                    <option value="card">카드</option>
+                </select>
+                <br>
+                <br>
+                <b>금액 : 5000원 / 무통장 입금 : 백석은행 2022-2021-2020-2019</b>
+                <br>
+                <br>
+            </div>
+        </div>
+
+        <!-- 누르면 qr생성되었습니다 팝업 -->
+        <button type="submit" onclick="goMain()" ;>결제</button>
+
+
+        <div id="jb-footer">
+            <p>백석대학교 소프트웨어공학 팀프로젝트</p>
+            <p>20172407, 20181604, 00000000, 00000000, 00000000</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

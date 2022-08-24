@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예매 결과</title>
+    <style>
+        #jb-container {
+        margin: 10px 10px 10px 2px auto;
+        padding: 20px;
+        border: 1px solid #bcbcbc;
+      }
+    
+        #jb-header {
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+      }
+    
+        #jb-content {
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+      }
+
+      #jb-qr {
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+        text-align: center;
+      }
+
+      #jb-start{
+        height: 150px;
+        width: 50%;
+        border: 1px solid #bcbcbc;
+        text-align: center;
+      }
+
+      #jb-end{
+        height: 150px;
+        width: 50%;
+        border: 1px solid #bcbcbc;
+        text-align: center;
+      }
+
+      #jb-bus {
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+        display: flex;
+      }
+
+      #jb-information {
+        text-align: center;
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #bcbcbc;
+        display: flex;
+      }
+      
+      
+      #jb-time {
+        height: 150px;
+        width: 50%;
+        border: 1px solid #bcbcbc;
+        text-align: center;
+      }
+      
+      #jb-position {
+        height: 150px;
+        width: 50%;
+        border: 1px solid #bcbcbc;
+        text-align: center;
+      }
+
+        #jb-footer {
+        font-size: 7px;
+        text-align: right;
+        padding: 20px;
+        border-top: 1px solid #bcbcbc;
+      }
+
+      button {
+      width: 100% ;height : 45px ; font-size: 25px;
+      background-color: #1b5ac2;
+      color: white;
+    }
+
+    button {
+    text-decoration-line: none; color: white;
+    cursor:pointer;
+    width: 100% ;
+    height : 45px ; font-size: 25px;
+    background-color: #1b5ac2;
+  }
+
+</style>
+<script>
+          function openQR() {
+            window.open('images/qrpng.png','new','scrollbars=no,width=400,height=400')
+        }
+</script>
+
+</head>
+<body>
+    <div id = "jb-container">
+        <div id = "jb-header">
+            <h1 style="text-align: center;">예매 결과</h1>
+            <p style="text-align: right;">20202020님</p>
+            <img src="images/bu.jpg" style="display: block; margin: 0 auto; width: 100px; height: 100px;">
+            <br>
+
+            <div id = "jb-qr">
+                <img src="images/qrpng.png" style="display: block; margin: 0 auto; width: 100px; height: 100px;" onclick="openQR()">
+                <b>출발일시 : 2020년 2월 20일 20시 20분</b>
+            </div>
+
+        </div>
+        
+        <div id = "jb-bus">
+          <div id = "jb-start">
+              <h2>
+                  <p>출발</p>
+              </h2>
+              <b>학교</b>
+          </div>
+
+          <div id = "jb-end">
+              <h2>
+                  <p>도착</p>
+              </h2>
+              <b>죽전</b>
+          </div>
+        </div>
+
+        <div id = "jb-information">
+            <div id = "jb-time">
+                <h2>
+                    <p>소요 시간</p>
+                </h2>
+                <b>45분</b>
+            </div>
+
+            <div id = "jb-position">
+                <h2 >
+                    <p>승차 위치</p>
+                </h2>
+                <b>1번</b>
+            </div>
+
+        </div>
+            <button onclick="location.href='main.html'">확인</button>
+
+            <div id = "jb-footer">
+                <p>백석대학교 소프트웨어공학 팀프로젝트</p>
+                <p>20172407, 20181604, 00000000, 00000000, 00000000</p>
+            </div>
+    </div>
+</body>
+</html>

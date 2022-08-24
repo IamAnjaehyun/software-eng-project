@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>로그인</title>
+    <style>
+        body {
+            margin: 5 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<script>
+        // 체크박스 단일선택
+        var std;
+        // 학생, 기사 체크박스 로그인 함수
+        function getstd(event) {
+            std =event.target.value;
+            console.log(std);
+        }
+    
+
+    function gogo() {
+        if (std == "std") {
+            window.location.href="main.html";
+        }
+        if (std == "bus") {
+            window.location.href="driver.html";
+
+        }
+    }
+</script>
+
+<body>
+    <img src="images/login.png" class="loginpic" href="main.html">
+
+    <div id="jb-content">
+
+        <div id="jb-login-content">
+            <h2 style="text-align: center;">로그인</h2>
+
+
+        </div>
+
+        <!-- 로그인 -->
+        <div id="jb-login">
+            <div>
+                <a id="input_check">
+
+                    <input type="radio" name="chk_info" value="std" style="text-align:center" onclick="getstd(event)">학생
+                    <input type="radio" name="chk_info" value="bus" onclick="getstd(event)">기사
+
+                </a>
+
+                <div>
+                    <input class="idpw" type="text" placeholder="아이디"></br></br>
+                </div>
+                <div>
+                    <input class="idpw" type="password" placeholder="비밀번호"></br></br>
+                    <button id="where" type="submit" onclick="gogo()">로그인</button>
+                </div>
+            </div>
+        </div>
+        <div id="jb-footer">
+            <p>백석대학교 소프트웨어공학 팀프로젝트</p>
+            <p>20172407,00000000,00000000,00000000,00000000,</p>
+        </div>
+    </div>
+</body>
+
+</html>

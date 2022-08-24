@@ -1,0 +1,163 @@
+
+    *{
+      font-family: 'gulim', 'gothic';
+
+    }
+
+    #jb-container {
+      /* width: 97%; */
+      padding-left: 20px;
+      border: 1px solid #bcbcbc;
+    }
+
+    #jb-header {
+      /* width: 97%; */
+
+      padding: 5px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+
+    #jb-search {
+      /* width: 97%; */
+
+      padding: 5px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+
+
+    #jb-content {
+      /* width: 97%; */
+      padding: 5px 20px;
+      margin-bottom: 15px;
+      border: 1px solid #bcbcbc;
+    }
+
+    #jb-qr {
+      /* width: 97.5%; */
+      
+      padding-left:20px;
+      padding-right:20px;
+      font-size: 20px;
+      margin-top:0px;
+      margin-bottom: 20px;
+      text-align: left;
+      border: 1px solid #bcbcbc;
+      background-color: gray;
+    }
+
+    #jb-change {
+      /* width: 100%; */
+      height: 85%;
+      padding: 5px 20px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+
+    img.loginpic{
+      /* width: 40%; */
+      height: 530px;
+    }
+    #jb-calender {
+      /* width: 97%; */
+      padding: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #bcbcbc;
+    }
+
+    #jb-footer {
+      /* width: 97%; */
+      padding-left: 20px;
+      padding-bottom: 20px;
+
+      font-size: 7px;
+      text-align: right;
+      border-top: 1px solid #bcbcbc;
+    }
+
+    #qr_box {
+      width: 99%;
+      border: 1px solid black;
+      display: flex;
+      float:left
+    }
+
+    button {
+      text-decoration-line: none; color: white;
+      cursor:pointer;
+      width: 100% ;
+      height : 45px ; font-size: 25px;
+      background-color: #1b5ac2;
+    }
+    .idpw{
+      width:99%; 
+      height: 50px; font-size: 25px;
+
+    }
+    .fa {
+
+      font-size:30px;
+    }
+    #jb-login {
+      width: 100%;
+
+    }
+    .place{
+      width:97%; height: 50px; font-size: 25px;
+    }
+
+    /* 모바일용 미디어쿼리 */
+    /* @media (max-width:768px){
+
+      img.loginpic{
+        width: 70%;
+        height: 20%;
+      }
+
+      #jb-container {
+        width: 94%;
+        height: 90%;
+        margin-bottom: 0px;
+      }
+      #jb-header {
+        width: 94%;
+
+      }
+      body{
+        text-align: center;
+        height: 100%;
+        margin-right: 33px;
+      }
+      #jb-content {
+        width: 94%;
+
+      }
+      #jb-login {
+        width: 97%;
+        margin: 0px;
+      }
+
+      #jb-qr {
+        width: 99%;
+        margin-bottom: 10px;
+        padding: 0 0;
+      }
+
+      .idpw,button{
+        width:100%;
+
+      }
+    } */
+
+
+    .search{
+      display:inline-block;
+    }
+
+    button{
+      color:white
+    }
+    select{
+      width: 99%; height: 50px; font-size: 25px;
+    }

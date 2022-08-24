@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <title>기사용 메인화면</title>
+  <style>
+            body {
+            margin: 5 auto;
+            text-align: center;
+        }
+  </style>
+  <script>
+        function full() {
+        if (!confirm("만석을 표시하시겠습니까?")) {
+            alert("취소(아니오)를 누르셨습니다.");
+        } else {
+            alert("확인(예)을 누르셨습니다. 만석이 표시되었습니다.");
+        }
+    }
+
+    function drive() {
+        if (!confirm("운행을 시작하시겠습니까?")) {
+            alert("취소(아니오)를 누르셨습니다.");
+        } else {
+            alert("확인(예)을 누르셨습니다.운행이 시작되었습니다.");
+        }
+    }
+  </script>
+</head>
+<html>
+<body>
+  <div id="jb-header">
+    <h1 style="margin-top: 5px;">통학버스 예매</h1>
+    <p style="text-align: right; margin: 0;">김백석 기사님</p>
+    <img src="images/bu.jpg" style="display: block; margin: 0 auto; width:100px; height:100px;">
+  </div>
+  <div id="jb-content">
+    </br>
+      <button onclick="full()">만석 표시하기</button></br></br>
+
+    <!-- QR 확인부 -->
+    <div id="jb-qr" style="text-align: center;">
+      <h2><b>QR코드<br>확인하기</b></h2>
+        <img src="images/qrcheck.png" >
+      </div>
+      <p style="text-align: right; font-size:20px "><a href="card.html" style="text-decoration-line: none; color:white"><b>카드 등록하기 ></b></a></p>
+    </div>
+
+    <button onclick="drive()">운행 시작하기</button></br></br>
+    <button onclick="location.href='https://www.bu.ac.kr/CrossEditor/binary/images/000078/1652424854577100.jpg'">전체 시간표 보기</button></br></br>
+
+    <div id="jb-footer">
+      <p>백석대학교 소프트웨어공학 팀프로젝트</p>
+      <p>20172407,00000000,00000000,00000000,00000000,</p>
+    </div>
+</body>
+
+
+
+</html>
